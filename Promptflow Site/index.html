@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptFlow — AI Prompt Store</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- AI Hero Styles -->
+    <link href="css/ai-hero.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">PromptFlow</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">FAQ</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <button class="btn btn-outline-light position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="cartCount">0</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section ai-hero text-white py-5" id="home">
+        <div class="ai-stars"></div>
+        <div class="ai-grid"></div>
+        <div class="ai-orb"></div>
+        
+        <div class="container py-5 position-relative">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7">
+                    <h1 class="display-4 fw-bold mb-4 ai-gradient-text">Smarter prompts. Better flow.</h1>
+                    <p class="lead mb-4 opacity-75">Supercharge your creativity and productivity with premium prompt packs for entrepreneurs, marketers, and creators. Built to plug-and-play with your favorite AI tools.</p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#products" class="btn btn-primary btn-lg btn-glow px-4">Explore Packs</a>
+                        <a href="#how-it-works" class="btn btn-outline-light btn-lg px-4">How It Works</a>
+                    </div>
+                    <div class="d-flex flex-wrap gap-4 mt-4 pt-2 text-white-50 small">
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-bolt me-2 text-warning"></i>
+                            <span>50+ ready-to-use prompts</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-robot me-2 text-info"></i>
+                            <span>Optimized for ChatGPT, Claude & more</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <i class="fas fa-download me-2 text-success"></i>
+                            <span>Instant download</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="ai-card glass shadow-lg">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="pulse-dot me-2"></div>
+                            <span class="text-uppercase small text-white-50">Live Preview</span>
+                        </div>
+                        <div class="code-block">
+<pre><code>// PromptFlow quick start
+// Goal: Launch a product in 7 days
+
+1) Generate 10 value props
+2) Draft landing page outline
+3) Plan 7-day content sprint
+4) Write 3 email sequences
+5) Automate follow-ups</code></pre>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <div class="d-flex align-items-center text-white-50 small">
+                                <i class="fas fa-shield-alt me-2"></i>
+                                Battle-tested templates
+                            </div>
+                            <a href="#products" class="btn btn-primary btn-sm btn-glow">Browse Packs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Section -->
+    <section class="py-5" id="products">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Our Prompt Packs</h2>
+                <p class="text-muted">Choose the perfect pack for your needs</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Product Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-primary bg-opacity-10 text-primary">
+                                    <i class="fas fa-bullhorn"></i>
+                                </div>
+                                <h4 class="mt-3 mb-2">Marketing Prompts Pack</h4>
+                                <h3 class="text-primary">€19</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>10+ marketing prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Facebook ad headlines</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Email campaigns</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Social media plans</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Landing page outlines</li>
+                            </ul>
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-primary add-to-cart" data-id="marketing" data-name="Marketing Prompts Pack" data-price="19">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-warning bg-opacity-10 text-warning">
+                                    <i class="fas fa-pen-fancy"></i>
+                                </div>
+                                <h4 class="mt-3 mb-2">Content Creator Pack</h4>
+                                <h3 class="text-warning">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>10+ content creation prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>YouTube video ideas</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>TikTok scripts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Instagram content</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Blog post outlines</li>
+                            </ul>
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-warning text-white add-to-cart" data-id="content" data-name="Content Creator Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-success bg-opacity-10 text-success">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <h4 class="mt-3 mb-2">Business Builder Pack</h4>
+                                <h3 class="text-success">€19</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>10+ business prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business plan templates</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Startup ideas</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pricing strategies</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Customer personas</li>
+                            </ul>
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-success add-to-cart" data-id="business" data-name="Business Builder Pack" data-price="19">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-info bg-opacity-10 text-info">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h4 class="mt-3 mb-2">Automation Prompt Pack</h4>
+                                <h3 class="text-info">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>10+ automation prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Zapier workflows</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Email automations</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Customer service</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business analytics</li>
+                            </ul>
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-info text-white add-to-cart" data-id="automation" data-name="Automation Prompt Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-purple bg-opacity-10 text-purple">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <h4 class="mt-3 mb-2">Creative AI Pack</h4>
+                                <h3 class="text-purple">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>10+ creative prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>AI art styles</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Storytelling</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Logo design</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Creative writing</li>
+                            </ul>
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-purple text-white add-to-cart" data-id="creative" data-name="Creative AI Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bundle Card -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm bundle-card">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-danger bg-opacity-10 text-danger">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <h4 class="mt-3 mb-2">All-in Bundle</h4>
+                                <h3 class="text-danger">€49 <small class="text-muted text-decoration-line-through">€93</small></h3>
+                                <div class="badge bg-danger bg-opacity-10 text-danger p-2 mt-2 mb-3">Save €44 (47%)</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>All 5 prompt packs</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>50+ total prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Marketing & content</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business & automation</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Creative AI tools</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bonus: Exclusive prompts</li>
+                            </ul>
+                            <div class="d-grid mt-4">
+                                <button class="btn btn-danger add-to-cart" data-id="bundle" data-name="All-in Bundle" data-price="49">Get the Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light" id="how-it-works">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How It Works</h2>
+                <p class="text-muted">Get started in just a few simple steps</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="step-number mb-3">1</div>
+                        <h4>Choose Your Pack</h4>
+                        <p class="text-muted">Select the prompt pack that best fits your needs or go for the complete bundle.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="step-number mb-3">2</div>
+                        <h4>Download Instantly</h4>
+                        <p class="text-muted">Get immediate access to your purchased prompts after payment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center p-4">
+                        <div class="step-number mb-3">3</div>
+                        <h4>Boost Your Workflow</h4>
+                        <p class="text-muted">Use the prompts with your favorite AI tools and save hours of work.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://via.placeholder.com/600x400" alt="About PromptFlow" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">About PromptFlow</h2>
+                    <p class="lead">Helping you work smarter with AI</p>
+                    <p>At PromptFlow, we believe that the right prompt can make all the difference when working with AI. Our mission is to help entrepreneurs, marketers, and content creators save time and achieve better results with carefully crafted AI prompts.</p>
+                    <p>Each prompt in our collections is designed to help you get the most out of AI tools like ChatGPT, Midjourney, and more, whether you're creating content, automating tasks, or growing your business.</p>
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="d-flex me-4">
+                            <div class="me-3">
+                                <i class="fas fa-check-circle text-primary fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">50+</h5>
+                                <p class="mb-0 text-muted">Prompts</p>
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="me-3">
+                                <i class="fas fa-users text-primary fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">1000+</h5>
+                                <p class="mb-0 text-muted">Users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What Our Customers Say</h2>
+                <p class="text-muted">Don't just take our word for it</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="mb-4">"The Marketing Prompts Pack has been a game-changer for my business. I've been able to create better ad copy in minutes instead of hours."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah M." class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <h6 class="mb-0">Sarah M.</h6>
+                                    <small class="text-muted">Marketing Director</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p class="mb-4">"As a content creator, the Content Creator Pack has saved me so much time. The prompts are well-structured and produce amazing results."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="James T." class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <h6 class="mb-0">James T.</h6>
+                                    <small class="text-muted">Content Creator</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <div class="mb-3 text-warning">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <p class="mb-4">"The All-in Bundle is worth every penny. The variety of prompts covers all my business needs, from marketing to automation."</p>
+                            <div class="d-flex align-items-center">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya K." class="rounded-circle me-3" width="50" height="50">
+                                <div>
+                                    <h6 class="mb-0">Priya K.</h6>
+                                    <small class="text-muted">Small Business Owner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5" id="faq">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <p class="text-muted">Find answers to common questions</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <!-- FAQ Item 1 -->
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h3 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                                    What are AI prompts?
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    AI prompts are instructions or input given to an AI system to generate specific outputs. They help guide the AI to produce more accurate and relevant results for your specific needs, whether it's generating text, images, or other content.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 2 -->
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h3 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                                    How do I use these prompts?
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    After purchasing a prompt pack, you'll receive a downloadable file containing all the prompts. Simply copy the prompt you want to use and paste it into your preferred AI tool (like ChatGPT, Midjourney, etc.), then customize the placeholders (like [your topic] or [your product]) with your specific information.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 3 -->
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h3 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                                    What AI tools are compatible with these prompts?
+                                </button>
+                            </h3>
+                            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Most of our text-based prompts work with AI language models like ChatGPT, Claude, and similar tools. The Creative AI Pack includes prompts specifically designed for image generation tools like Midjourney and DALL·E. Each prompt includes instructions on how to use it with the appropriate AI tool.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 4 -->
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h3 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                                    Is there a money-back guarantee?
+                                </button>
+                            </h3>
+                            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Yes, we offer a 30-day money-back guarantee. If you're not satisfied with your purchase for any reason, simply contact our support team within 30 days of purchase for a full refund.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ Item 5 -->
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h3 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                                    Do I need any technical skills to use these prompts?
+                                </button>
+                            </h3>
+                            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    No technical skills are required! Our prompts are designed to be user-friendly and come with clear instructions. As long as you can copy, paste, and make simple text replacements (like changing [your topic] to your actual topic), you'll be able to use these prompts effectively.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center py-4">
+            <h2 class="fw-bold mb-4">Ready to Transform Your Workflow?</h2>
+            <p class="lead mb-4">Join thousands of professionals who are already saving time and boosting their productivity with PromptFlow.</p>
+            <a href="#products" class="btn btn-light btn-lg px-5">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Get In Touch</h2>
+                <p class="text-muted">We'd love to hear from you</p>
+                <div class="divider mx-auto"></div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <form>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subject" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subject" required>
+                                </div>
+                                <div class="mb-4">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" rows="5" required></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="text-uppercase fw-bold mb-4">PromptFlow</h5>
+                    <p>Smarter prompts. Better flow. Helping you work more efficiently with AI.</p>
+                    <div class="social-links mt-4">
+                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                        <a href="#" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-uppercase fw-bold mb-4">Products</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Marketing Prompts</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Content Creator Pack</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Business Builder</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Automation Pack</a></li>
+                        <li><a href="#" class="text-white-50 text-decoration-none">Creative AI Pack</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h6 class="text-uppercase fw-bold mb-4">Company</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#about" class="text-white-50 text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#faq" class="text-white-50 text-decoration-none">FAQs</a></li>
+                        <li class="mb-2"><a href="#" class="text-white-50 text-decoration-none">Testimonials</a></li>
+                        <li><a href="#contact" class="text-white-50 text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h6 class="text-uppercase fw-bold mb-4">Newsletter</h6>
+                    <p>Subscribe to get updates on new products and offers.</p>
+                    <form class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your email" aria-label="Your email" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                    <p class="small text-white-50">We'll never share your email with anyone else.</p>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0">&copy; 2026 PromptFlow. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white-50 me-3 text-decoration-none">Privacy Policy</a>
+                    <a href="#" class="text-white-50 me-3 text-decoration-none">Terms of Service</a>
+                    <a href="#" class="text-white-50 text-decoration-none">Refund Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Offcanvas Cart -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="cartOffcanvasLabel"><i class="fas fa-shopping-cart me-2"></i>Your Cart</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cartItems" class="list-group list-group-flush mb-3">
+                <!-- Items will be injected here -->
+            </div>
+            <div class="mt-auto">
+                <div class="d-flex justify-content-between align-items-center border-top pt-3">
+                    <strong>Total</strong>
+                    <strong id="cartTotal">€0</strong>
+                </div>
+                <div class="d-grid gap-2 mt-3">
+                    <button id="checkoutBtn" class="btn btn-primary">Checkout</button>
+                    <button id="clearCart" class="btn btn-outline-secondary">Clear Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/script.js"></script>
+</body>
+</html>
