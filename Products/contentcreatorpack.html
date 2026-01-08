@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Creator Pack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #FFFFFF;
+            color: #0F172A;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            color: #FFFFFF;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .pack-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .pack-price {
+            font-size: 24px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
+        
+        .intro {
+            background: #F8FAFC;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #3B82F6;
+        }
+        
+        .intro h2 {
+            color: #3B82F6;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+        
+        .intro p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .intro ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .intro li {
+            margin-bottom: 8px;
+        }
+        
+        .prompt-section {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            page-break-inside: avoid;
+        }
+        
+        .prompt-section:hover {
+            border-color: #3B82F6;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
+        }
+        
+        .prompt-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .prompt-number {
+            background: #3B82F6;
+            color: #FFFFFF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .prompt-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            flex: 1;
+        }
+        
+        .prompt-box {
+            background: #F1F5F9;
+            border-left: 4px solid #3B82F6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .prompt-description {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .prompt-tips {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .prompt-tips h4 {
+            color: #92400E;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .prompt-tips p {
+            color: #78350F;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .example-box {
+            background: #ECFDF5;
+            border-left: 4px solid #10B981;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .example-box h4 {
+            color: #065F46;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .example-box p {
+            color: #047857;
+            font-size: 13px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #E2E8F0;
+            page-break-inside: avoid;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3B82F6;
+            margin-bottom: 10px;
+        }
+        
+        .footer-text {
+            color: #64748B;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .download-btn {
+            background: #3B82F6;
+            color: #FFFFFF;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        @media print {
+            .download-btn {
+                display: none;
+            }
+            body {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">PromptFlow</div>
+            <div class="tagline">Smarter prompts. Better flow.</div>
+            <div class="pack-title">Content Creator Pack</div>
+            <div class="pack-price">€15</div>
+        </div>
+        
+        <div class="intro">
+            <h2>🎬 Creëer virale content met AI</h2>
+            <p>Perfect voor content creators, influencers en social media managers die consistent hoogwaardige content willen produceren zonder burn-out.</p>
+            <p><strong>Deze pack helpt je met:</strong></p>
+            <ul>
+                <li>YouTube video ideation en scripting</li>
+                <li>TikTok en Instagram Reels concepten</li>
+                <li>Blog artikelen en SEO optimalisatie</li>
+                <li>Podcast planning en vragenlijsten</li>
+                <li>Content calendars en hashtag strategieën</li>
+            </ul>
+            <p><strong>Geschikt voor:</strong> YouTubers, TikTokkers, Instagram creators, bloggers, podcasters en social media managers.</p>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">1</span>
+                <div class="prompt-title">YouTube Video Title Generator</div>
+            </div>
+            <p class="prompt-description">Genereer click-waardige video titels die zowel menselijk als algoritme-vriendelijk zijn, met een perfecte balans tussen nieuwsgierigheid en duidelijkheid.</p>
+            
+            <div class="prompt-box">
+Genereer 10 YouTube video titel-ideeën over [ONDERWERP/NICHE].
+
+Video context:
+- Hoofdonderwerp: [specifiek topic]
+- Doelgroep: [wie kijkt je kanaal]
+- Video type: [tutorial/vlog/review/listicle/etc.]
+- Toon/stijl: [educatief/entertainment/inspirerend/etc.]
+- Video lengte: [kort <5min / medium 5-15min / lang 15min+]
+- Belangrijkste keyword: [SEO keyword]
+- Unieke angle: [wat maakt deze video anders]
+
+Titels moeten:
+1. 60-70 karakters zijn (optimaal voor zoekresultaten)
+2. Belangrijkste keyword bevatten (voor eerste 5 woorden)
+3. Emotie of nieuwsgierigheid triggeren
+4. Geen clickbait zijn (eerlijk over inhoud)
+5. Cijfers bevatten waar mogelijk (7 Tips, 3 Fouten, etc.)
+6. Duidelijk voordeel communiceren
+
+Voor elke titel geef ook:
+- Waarom deze werkt (rationale)
+- Thumbnail suggestie
+- Geschatte CTR potentieel (hoog/medium/laag)
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 Voorbeeld</h4>
+                <p>"Genereer 10 YouTube video titels over thuiswerk productiviteit. Doelgroep: jonge professionals 25-35. Type: praktische tutorial. Toon: energiek en motiverend. Lengte: 8-12 minuten. Keyword: productiviteit tips thuiswerken."</p>
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Test titels met TubeBuddy of VidIQ. Gebruik power words zoals "Ultimate", "Essential", "Complete". Analyseer je best-performing videos voor patronen. Eerste 3 woorden zijn cruciaal voor mobile.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">2</span>
+                <div class="prompt-title">TikTok Script Writer (60sec)</div>
+            </div>
+            <p class="prompt-description">Schrijf snappy, engaging scripts voor korte video's die binnen 3 seconden aandacht grijpen en tot het einde boeien.</p>
+            
+            <div class="prompt-box">
+Schrijf een 60-seconden TikTok/Reel script over [ONDERWERP].
+
+Content brief:
+- Onderwerp/boodschap: [wat wil je overbrengen]
+- Doelgroep: [leeftijd, interesses]
+- Content doel: [educatie/entertainment/inspiratie/verkoop]
+- Tone: [grappig/serieus/motiverend/chill]
+- Belangrijkste punt: [kernboodschap in 1 zin]
+- Call-to-action: [volgen/liken/delen/link in bio/etc.]
+- Trend/sound: [als je specifieke trend wilt gebruiken]
+
+Script format:
+
+HOOK (0-3 sec):
+[Opening zin die scroll stopt - vraag, controversiële statement, of preview resultaat]
+
+BODY (4-50 sec):
+[3-5 key points kort en punchy uitgelegd]
+- Gebruik visuele cues: "Watch this...", "Look at..."
+- Spreek direct tot camera/kijker
+- Include subtle humor/relatability
+
+CTA (51-60 sec):
+[Duidelijke actie + waarom]
+
+Voeg toe:
+- On-screen text suggesties
+- Transition points
+- B-roll/overlay ideeën
+- Hashtag strategie (3 niche, 2 trending, 5 broad)
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Eerste 3 seconden bepalen 80% van je retention. Gebruik tekst on-screen voor accessibility. Post tussen 18:00-21:00 voor beste engagement. Test verschillende hooks voor hetzelfde onderwerp.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">3</span>
+                <div class="prompt-title">Trending Hashtag Research</div>
+            </div>
+            <p class="prompt-description">Vind de perfecte mix van niche, trending en broad hashtags om je bereik te maximaliseren zonder je content te verdunken.</p>
+            
+            <div class="prompt-box">
+Creëer een hashtag strategie voor [INDUSTRIE/NICHE] content op [PLATFORM].
+
+Context:
+- Mijn niche: [specifiek onderwerp]
+- Doelgroep locatie: [land/stad of wereldwijd]
+- Content type: [foto/video/carrousel/etc.]
+- Account grootte: [followers aantal]
+- Posting frequency: [hoe vaak]
+- Vergelijkbare accounts: [concurrent of inspiratie accounts]
+
+Maak 3 hashtag sets van elk 20-30 hashtags:
+
+SET 1: NICHE HASHTAGS (10 stuks)
+- Specifiek voor jouw niche
+- 10k-100k posts
+- Hoogste relevantie
+
+SET 2: TRENDING HASHTAGS (5 stuks)
+- Currently trending in je industrie
+- Ververs deze wekelijks
+- 100k-1M posts
+
+SET 3: BROAD REACH HASHTAGS (10 stuks)
+- Algemeen maar relevant
+- 1M+ posts
+- Voor brede discovery
+
+SET 4: BRANDED HASHTAGS (5 stuks)
+- Eigen hashtag ideeën
+- Community building
+- Campagne specifiek
+
+Voor elke hashtag include:
+- Geschatte post volume
+- Engagement rate (als bekend)
+- Of het trending is
+- Best tijd om te gebruiken
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Roteer hashtags per post voor betere reach. Gebruik tools zoals Display Purposes of RiteTag. Check hashtags in Instagram search voor banned tags. Plaats hashtags in eerste comment op Instagram.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">4</span>
+                <div class="prompt-title">Instagram Carousel Designer</div>
+            </div>
+            <p class="prompt-description">Plan educatieve of storytelling carousels die mensen swipe-n, liken en delen - perfect voor algoritme boost.</p>
+            
+            <div class="prompt-box">
+Ontwerp een Instagram carousel post over [ONDERWERP] met 8-10 slides.
+
+Post details:
+- Onderwerp: [wat ga je uitleggen/delen]
+- Doel: [educeren/inspireren/verkopen/amuseren]
+- Doelgroep: [voor wie is dit]
+- Belangrijkste takeaway: [wat moet iemand onthouden]
+- Call-to-action: [wat moet iemand doen na de post]
+- Branding: [kleuren/stijl als je die hebt]
+
+Voor elke slide geef:
+
+SLIDE 1 (COVER):
+- Pakkende titel (max 6 woorden)
+- Visuele hook (wat zie je)
+- Subtitel/preview
+
+SLIDES 2-9 (CONTENT):
+- Slide nummer + heading
+- 2-3 bullets met kerninfo per slide
+- Visual suggestie (icon/foto/graphic)
+- Transition tekst ("Swipe voor meer")
+
+SLIDE 10 (OUTRO):
+- Samenvatting in 1-2 zinnen
+- Clear CTA
+- Branded element
+
+Plus:
+- Caption (eerste 125 karakters optimized)
+- Hashtag lijst (30 stuks)
+- Best posting time
+- Engagement vraag voor comments
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Carousel posts krijgen 3x meer engagement dan single posts. Maak slide 1 intrigerend genoeg om te swipe-n. Gebruik consistent design voor herkenbaarheid. Einde slide moet mensen doen terugkeren naar je profiel.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">5</span>
+                <div class="prompt-title">Blog Article Outliner</div>
+            </div>
+            <p class="prompt-description">Structureer complete blog artikelen met SEO-geoptimaliseerde kopjes, interne links en leesbare formatting.</p>
+            
+            <div class="prompt-box">
+Maak een gedetailleerde outline voor een blogartikel getiteld: "[TITEL]"
+
+Article specs:
+- Target keyword: [primaire SEO keyword]
+- Secondary keywords: [2-3 related keywords]
+- Woordenaantal doel: [800/1500/2500+ woorden]
+- Doelgroep kennislevel: [beginner/intermediate/expert]
+- Tone: [conversational/formeel/technisch/vriendelijk]
+- Artikel type: [how-to/listicle/guide/comparison/case study]
+- Conversie doel: [email signup/product link/affiliate link]
+
+Maak outline met:
+
+INTRO (150-200 woorden):
+- Hook zin
+- Probleem/vraag stellen
+- Wat artikel gaat behandelen
+- Waarom belangrijk
+- Kort overzicht hoofdpunten
+
+HOOFDSTUK 1-5:
+Voor elk hoofdstuk:
+- H2 heading (met keyword variatie)
+- 2-4 H3 subheadings
+- Kernpunten om te behandelen
+- Voorbeelden/data om te includen
+- Mogelijk beeld/graphic
+- Internal link opportunities
+
+CONCLUSIE (100-150 woorden):
+- Samenvatting key points
+- Final takeaway
+- Clear CTA
+- Volgende stap voor lezer
+
+EXTRA ELEMENTEN:
+- Featured image idee
+- Meta description (155 karakters)
+- Suggested internal links (3-5)
+- External authority links (2-3)
+- FAQ section (5 vragen)
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Gebruik vragende H2's voor SEO. Break wall-of-text met bullets, quotes en images. Aim voor 1 image per 300 woorden. Include table of contents voor lange artikelen. Update oude posts elk jaar.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">6</span>
+                <div class="prompt-title">Content Calendar Builder</div>
+            </div>
+            <p class="prompt-description">Plan een complete week content met thematische consistentie en strategische posting times voor maximaal bereik.</p>
+            
+            <div class="prompt-box">
+Creëer een wekelijkse contentkalender voor een [TYPE] creator.
+
+Creator profiel:
+- Niche: [fitness/business/lifestyle/tech/etc.]
+- Platforms: [welke en focus verdeling]
+- Posting frequency: [X posts per dag per platform]
+- Content pillars: [3-4 hoofdthema's]
+- Belangrijkste doel: [groei/engagement/verkoop/brand awareness]
+- Beschikbare tijd: [uren per week voor content]
+- Content formats: [welke soorten maak je]
+
+Voor elke dag (Ma-Zo) geef:
+
+PLATFORM 1 (bijv. Instagram):
+- Content type (Reel/Post/Story/Carrousel)
+- Topic/onderwerp
+- Caption eerste regel
+- Best posting time
+- Hashtag categorie
+- Estimated time to create
+
+PLATFORM 2 (bijv. TikTok):
+- Content type
+- Hook/concept
+- Trend/sound optie
+- Posting time
+- Estimated time to create
+
+PLATFORM 3 (bijv. YouTube/LinkedIn/etc.):
+[herhaal structuur]
+
+CONTENT THEMES:
+- Monday: [thema]
+- Tuesday: [thema]
+- Wednesday: [thema]
+- Thursday: [thema]
+- Friday: [thema]
+- Weekend: [thema]
+
+BATCH PLANNING:
+- Welke dagen samen opnemen
+- Content die te recyclen is
+- Prep work voor volgende week
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Plan 80% evergreen, 20% trending content. Batch film/edit op vaste dagen. Hergebruik 1 concept over 3 platforms (verschillende formats). Review analytics elke vrijdag om aanpassingen te maken.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">7</span>
+                <div class="prompt-title">Podcast Interview Questions</div>
+            </div>
+            <p class="prompt-description">Genereer doordachte, originele vragen die diepgang bereiken en je gast laten shinen terwijl je audience waarde krijgt.</p>
+            
+            <div class="prompt-box">
+Genereer 15-20 podcast interview vragen voor [GAST/ONDERWERP].
+
+Podcast context:
+- Podcast naam/niche: [jouw show]
+- Gast naam/expertise: [wie interview je]
+- Gast achtergrond: [relevante bio info]
+- Episode theme: [hoofdonderwerp gesprek]
+- Audience: [wie luistert]
+- Episode lengte: [30/45/60+ minuten]
+- Tone: [casual/diep/inspirerend/educatief]
+
+Vraag categorieën:
+
+OPENING WARMERS (3 vragen):
+- Icebreakers om comfortabel te worden
+- Licht en toegankelijk
+- Geeft context voor luisteraars
+
+DEEP DIVE QUESTIONS (8-10 vragen):
+- Kernexpertise van gast
+- Specifieke ervaringen/verhalen
+- Controversial/challenging vragen
+- "Hoe"-vragen voor tactische tips
+- Open vragen die uitnodigingen tot storytelling
+
+PERSONAL/REFLECTIVE (3-4 vragen):
+- Motivaties en values
+- Challenges en failures
+- Turning points in career/leven
+- Persoonlijke ontwikkeling
+
+ACTIONABLE/PRACTICAL (2-3 vragen):
+- Concrete advice voor listeners
+- Resources/tools aanbevelingen
+- Quick wins
+
+CLOSING (1-2 vragen):
+- Toekomst plannen/projecten
+- Waar mensen gast kunnen volgen
+- Laatste wijsheid
+
+Voor elke vraag:
+- Waarom deze vraag (rationale)
+- Mogelijke follow-up vraag
+- What NOT to ask (red flags)
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Stuur gast GEEN vragen vooraf - houdt gesprek spontaan. Listen more than you talk - 80/20 regel. Laat stiltes bestaan, beste insights komen na pauzes. Record 20% meer dan je nodig hebt.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">8</span>
+                <div class="prompt-title">YouTube Description Optimizer</div>
+            </div>
+            <p class="prompt-description">Schrijf SEO-geoptimaliseerde beschrijvingen die mensen helpen je video te vinden én doorklikken naar je links.</p>
+            
+            <div class="prompt-box">
+Schrijf een geoptimaliseerde YouTube beschrijving voor een tutorial over [ONDERWERP].
+
+Video details:
+- Video titel: [exacte titel]
+- Hoofdonderwerp: [wat leer je mensen]
+- Target keyword: [SEO focus]
+- Video lengte: [minuten]
+- Belangrijkste punten: [wat behandel je]
+- Links te promoten: [website/affiliate/social/etc.]
+- Timestamps: [chapters in video]
+
+DESCRIPTION STRUCTUUR:
+
+DEEL 1: EERSTE 150 KARAKTERS (zichtbaar zonder "show more"):
+- Vat video samen met keyword
+- Maak mensen nieuwsgierig
+- Include belangrijkste link
+
+DEEL 2: EXTENDED DESCRIPTION (150-5000 karakters):
+- Uitgebreide samenvatting (2-3 alinea's)
+- Wat gaan ze leren (bullets)
+- Waarom dit belangrijk is
+- Timestamps (00:00 Intro, 02:30 Step 1, etc.)
+
+DEEL 3: CALLS-TO-ACTION:
+- Subscribe CTA met waarom
+- Notification bell reminder
+- Like/comment vraag
+- Related video links (3-5)
+
+DEEL 4: LINKS & RESOURCES:
+- Gepromote links (website, producten)
+- Tools/resources genoemd in video
+- Affiliate links (met disclaimer)
+- Social media links
+
+DEEL 5: HASHTAGS & TAGS:
+- 3 relevante #hashtags
+- Tag suggesties (15-20)
+
+DEEL 6: ABOUT/BOILERPLATE:
+- Korte channel beschrijving
+- Upload schedule
+- Contact info
+
+EXTRA OPTIMALISATIE:
+- Keyword density zonder stuffing
+- Natural language
+- Engage schrijfstijl
+- Clear formatting (bullets, spacing)
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Update descriptions van oude videos voor SEO. Include timestamps voor beter viewer retention. Eerste 2-3 zinnen zijn kritiek voor search rankings. Test verschillende CTA's en track welke werken.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">9</span>
+                <div class="prompt-title">Viral Challenge Creator</div>
+            </div>
+            <p class="prompt-description">Ontwikkel concepten voor social media challenges die het potentieel hebben om viraal te gaan en community engagement te boosten.</p>
+            
+            <div class="prompt-box">
+Creëer een viral challenge concept voor [NICHE/PLATFORM].
+
+Challenge context:
+- Platform: [TikTok/Instagram/YouTube/etc.]
+- Niche/industrie: [jouw vakgebied]
+- Doel: [awareness/groei/engagement/verkoop]
+- Moeilijkheidsgraad: [easy/medium/challenging]
+- Doelgroep: [wie moet meedoen]
+- Branding element: [hoe sluit het aan bij jouw merk]
+
+CHALLENGE CONCEPT:
+
+1. NAAM:
+- Catchy challenge naam (met hashtag)
+- Easy te onthouden en uitspreken
+- Unique maar niet obscuur
+
+2. CONCEPT:
+- Wat moeten mensen doen (stap-voor-stap)
+- Hoe lang duurt het (tijd commitment)
+- Wat hebben ze nodig (props/setting)
+- Moeilijkheid level
+
+3. VIRALITEIT ELEMENTEN:
+- Waarom willen mensen meedoen (FOMO/fun/purpose)
+- Sharability factor (waarom delen mensen dit)
+- Variatie mogelijkheden (personalisatie)
+- Trending sound/music suggestie
+
+4. PARTICIPATION MECHANICS:
+- Hoe mensen meedoen
+- Tagging/hashtag regels
+- Deadline of ongoing
+- Prizes/incentives (als van toepassing)
+
+5. SEEDING STRATEGIE:
+- Wie zijn de eerste 5-10 creators om te benaderen
+- Launch date en timeline
+- Promotional content ideeën
+- Momentum building tactics
+
+6. SUCCESS METRICS:
+- Wat definieert succes
+- KPIs to track
+- Expected reach
+
+7. CONTENT EXAMPLES:
+- 3 verschillende variaties mensen kunnen doen
+- Accessibility (hoe kunnen mensen alle levels meedoen)
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Maak het makkelijk maar niet saai - sweet spot is 80% van mensen kan het, 20% moet creatiever zijn. Partner met micro-influencers voor initial seeding. Time je launch met cultural moments. Document alles voor case study.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">10</span>
+                <div class="prompt-title">SEO Keyword Research</div>
+            </div>
+            <p class="prompt-description">Vind long-tail keywords met hoog potentieel en lage competitie voor je blog, video's en social content.</p>
+            
+            <div class="prompt-box">
+Genereer SEO-vriendelijke keywords voor content over [ONDERWERP].
+
+Research context:
+- Hoofdonderwerp: [breed topic]
+- Content type: [blog/video/social]
+- Doelgroep intent: [informational/transactional/navigational]
+- Domain authority: [low/medium/high - als je dit weet]
+- Geographic focus: [lokaal/nationaal/internationaal]
+- Competition level willing to face: [low/medium/high]
+
+Genereer keyword sets:
+
+PRIMARY KEYWORDS (3-5 stuks):
+- Volume: 1000-10k monthly searches
+- Difficulty: Medium
+- Search intent match
+- Exact match opportunities
+
+SECONDARY KEYWORDS (10-15 stuks):
+- Volume: 100-1000 searches
+- Long-tail variations
+- Question-based keywords
+- Lower competition
+
+LSI KEYWORDS (10-20 stuks):
+- Semantically related terms
+- Context builders
+- Natural language variations
+
+QUESTION KEYWORDS (5-10 stuks):
+- Who/What/Where/When/Why/How
+- Perfect voor FAQ sections
+- Voice search optimized
+
+Voor elke keyword geef:
+- Estimated search volume
+- Keyword difficulty score (educated guess)
+- Search intent (informational/commercial/transactional)
+- Content format aanbeveling (blog/video/infographic)
+- Competition analysis (low/medium/

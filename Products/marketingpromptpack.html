@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Prompts Pack</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #FFFFFF;
+            color: #0F172A;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+            color: #FFFFFF;
+            padding: 60px 40px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        
+        .pack-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .pack-price {
+            font-size: 24px;
+            font-weight: 600;
+            background: rgba(255,255,255,0.2);
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 50px;
+        }
+        
+        .intro {
+            background: #F8FAFC;
+            padding: 35px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border-left: 5px solid #3B82F6;
+        }
+        
+        .intro h2 {
+            color: #3B82F6;
+            font-size: 26px;
+            margin-bottom: 15px;
+        }
+        
+        .intro p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+        
+        .intro ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .intro li {
+            margin-bottom: 8px;
+        }
+        
+        .prompt-section {
+            background: #FFFFFF;
+            border: 2px solid #E2E8F0;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            page-break-inside: avoid;
+        }
+        
+        .prompt-section:hover {
+            border-color: #3B82F6;
+            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
+        }
+        
+        .prompt-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .prompt-number {
+            background: #3B82F6;
+            color: #FFFFFF;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        
+        .prompt-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0F172A;
+            flex: 1;
+        }
+        
+        .prompt-box {
+            background: #F1F5F9;
+            border-left: 4px solid #3B82F6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .prompt-description {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .prompt-tips {
+            background: #FEF3C7;
+            border-left: 4px solid #F59E0B;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .prompt-tips h4 {
+            color: #92400E;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .prompt-tips p {
+            color: #78350F;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        
+        .example-box {
+            background: #ECFDF5;
+            border-left: 4px solid #10B981;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        
+        .example-box h4 {
+            color: #065F46;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .example-box p {
+            color: #047857;
+            font-size: 13px;
+            line-height: 1.5;
+            font-style: italic;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #E2E8F0;
+            page-break-inside: avoid;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #3B82F6;
+            margin-bottom: 10px;
+        }
+        
+        .footer-text {
+            color: #64748B;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .download-btn {
+            background: #3B82F6;
+            color: #FFFFFF;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #2563EB;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
+        }
+        
+        @media print {
+            .download-btn {
+                display: none;
+            }
+            body {
+                font-size: 12pt;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">PromptFlow</div>
+            <div class="tagline">Smarter prompts. Better flow.</div>
+            <div class="pack-title">Marketing Prompts Pack</div>
+            <div class="pack-price">€19</div>
+        </div>
+        
+        <div class="intro">
+            <h2>🚀 Boost je marketingstrategie met AI</h2>
+            <p>Welkom bij de Marketing Prompts Pack! Deze collectie van 10 professionele prompts is speciaal ontworpen voor marketeers, ondernemers en kleine bedrijven die hun marketing willen verbeteren met AI.</p>
+            <p><strong>Wat krijg je?</strong></p>
+            <ul>
+                <li>10 kant-en-klare prompts voor diverse marketingtaken</li>
+                <li>Gedetailleerde uitleg en gebruiksinstructies per prompt</li>
+                <li>Praktische voorbeelden en tips voor optimale resultaten</li>
+                <li>Direct toepasbaar in ChatGPT, Claude of andere AI-tools</li>
+            </ul>
+        </div>
+        
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">1</span>
+                <div class="prompt-title">Facebook Ad Headlines Generator</div>
+            </div>
+            <p class="prompt-description">Creëer meerdere varianten van pakkende ad-headlines om te testen welke het beste converteert. Perfect voor A/B testing en het verhogen van je CTR (Click-Through Rate).</p>
+            
+            <div class="prompt-box">
+Ik heb 5 overtuigende Facebook ad-headlines nodig voor [PRODUCT/DIENST]. 
+
+Context:
+- Doelgroep: [beschrijf je ideale klant]
+- Belangrijkste voordeel: [hoofdvoordeel van je product]
+- Unieke selling point: [wat maakt jou anders]
+- Tone of voice: [professioneel/casual/energiek/etc.]
+
+Maak headlines die:
+1. Direct de aandacht trekken
+2. Het belangrijkste voordeel benadrukken
+3. Nieuwsgierigheid opwekken
+4. Kort en krachtig zijn (max 40 tekens)
+5. Een emotionele trigger bevatten
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 Voorbeeld</h4>
+                <p>"Ik heb 5 overtuigende Facebook ad-headlines nodig voor online fitness coaching. Doelgroep: drukke professionals 30-45 jaar. Belangrijkste voordeel: resultaten in 20 minuten per dag. USP: gepersonaliseerde AI-trainingsplannen. Tone: motiverend en toegankelijk."</p>
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Test altijd meerdere headlines tegelijk. Gebruik cijfers ("5 redenen", "30 dagen") voor meer geloofwaardigheid. Voeg urgentie toe met woorden als "nu", "vandaag" of "beperkt".</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">2</span>
+                <div class="prompt-title">Value Proposition Creator</div>
+            </div>
+            <p class="prompt-description">Ontwikkel heldere en unieke waardeproposities die je merk onderscheiden van de concurrentie en resoneren met je doelgroep.</p>
+            
+            <div class="prompt-box">
+Genereer 10 unieke value propositions voor [MERK/BEDRIJF].
+
+Bedrijfsinfo:
+- Wat we doen: [kernactiviteit]
+- Voor wie: [doelgroep beschrijving]
+- Belangrijkste probleem dat we oplossen: [pijnpunt]
+- Onze aanpak: [wat maakt jullie uniek]
+- Gewenst resultaat voor klant: [eindresultaat]
+
+Maak value propositions die:
+- Duidelijk het voordeel communiceren
+- Zich onderscheiden van concurrenten
+- Emotioneel aanspreken
+- In één zin te begrijpen zijn
+- Een belofte bevatten
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 Voorbeeld</h4>
+                <p>"Genereer 10 value propositions voor een eco-vriendelijk schoonmaakbedrijf. Wat we doen: professionele schoonmaak voor kantoren. Voor wie: duurzame bedrijven in Amsterdam. Probleem: chemische producten schaden milieu en gezondheid. Onze aanpak: 100% natuurlijke producten + CO2-neutrale service."</p>
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Gebruik de formule: [Specifiek resultaat] voor [specifieke doelgroep] door [unieke methode]. Test je proposities met echte klanten voordat je ze definitief maakt.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">3</span>
+                <div class="prompt-title">Social Media Launch Plan</div>
+            </div>
+            <p class="prompt-description">Plan een complete 7-daagse social media campagne voor een succesvolle productlancering met consistente messaging en maximale impact.</p>
+            
+            <div class="prompt-box">
+Creëer een gedetailleerd 7-daags social media plan voor de lancering van [PRODUCT/DIENST].
+
+Product details:
+- Naam en beschrijving: [details]
+- Lanceerdatum: [datum]
+- Doelgroep: [wie]
+- Platforms: [Instagram/LinkedIn/TikTok/Facebook]
+- Belangrijkste features: [lijst]
+- Launch special: [aanbieding/korting]
+
+Voorzien elk van deze dagen van:
+1. Post idee met specifieke content
+2. Optimale post timing
+3. Caption suggestie
+4. Relevante hashtags
+5. Call-to-action
+6. Visual suggestie (foto/video/carrousel)
+
+Dagen: 3 dagen teaser → Launch dag → 3 dagen follow-up
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Begin met "coming soon" teasers om anticipatie op te bouwen. Gebruik countdown stickers op Instagram. Plan je belangrijkste post op de dag met hoogste engagement voor je account.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">4</span>
+                <div class="prompt-title">Re-engagement Email Campaign</div>
+            </div>
+            <p class="prompt-description">Win inactieve klanten terug met een doordachte email sequence die waarde biedt en ze motiveert om opnieuw actie te ondernemen.</p>
+            
+            <div class="prompt-box">
+Schrijf een 3-email re-engagement campagne voor klanten die [TIJDSPERIODE] niet actief zijn geweest.
+
+Bedrijfscontext:
+- Wat we verkopen: [product/dienst]
+- Vorige interactie was: [laatste aankoop/activiteit]
+- Reden inactiviteit (vermoedens): [redenen]
+- Wat we bieden: [nieuwe features/producten/voordelen]
+- Speciale aanbieding: [incentive om terug te komen]
+
+Email 1 (Dag 1): "We missen je" - vriendelijke reminder
+Email 2 (Dag 4): Waarde/educatie - wat ze hebben gemist
+Email 3 (Dag 7): Exclusieve aanbieding - laatste kans
+
+Elk email moet hebben:
+- Pakkende onderwerpregel
+- Persoonlijke aanhef
+- Korte, scannbare content
+- Duidelijke CTA
+- P.S. met extra incentive
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Gebruik de klant zijn naam en refereer naar hun laatste aankoop. Test verschillende onderwerpregels. Maak unsubscribe makkelijk - het is beter dan spam markering.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">5</span>
+                <div class="prompt-title">Review-to-Marketing Message Converter</div>
+            </div>
+            <p class="prompt-description">Transform klantreviews in krachtige marketing boodschappen die sociale bewijskracht leveren en nieuwe klanten overtuigen.</p>
+            
+            <div class="prompt-box">
+Analyseer deze klantreviews en vat ze samen in 3 krachtige marketing messages:
+
+[PLAK HIER 5-10 KLANTREVIEWS]
+
+Output gewenst:
+1. Identificeer de 3 meest genoemde voordelen/thema's
+2. Formuleer deze als korte, pakkende marketing messages
+3. Voeg een klantquote toe bij elke message (letterlijk uit reviews)
+4. Geef aan hoe je elke message kunt gebruiken (website/ads/social)
+
+Maak de messages:
+- Authentiek (gebaseerd op echte feedback)
+- Specifiek (geen vage claims)
+- Emotioneel resonerend
+- Gemakkelijk te onthouden
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 Voorbeeld Output</h4>
+                <p>Message 1: "Bespaar 10+ uur per week" - Gebruik op homepage hero section<br>
+                Message 2: "Eindelijk begrijpelijke analyses" - Perfect voor LinkedIn posts<br>
+                Message 3: "ROI binnen 2 maanden" - Krachtig voor sales conversations</p>
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Update je marketing messages elk kwartaal met nieuwe reviews. Gebruik specifieke cijfers en resultaten uit reviews. Vraag toestemming voordat je klanten quotes publiekelijk gebruikt.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">6</span>
+                <div class="prompt-title">Landing Page Outline Builder</div>
+            </div>
+            <p class="prompt-description">Bouw een conversie-geoptimaliseerde landingspagina structuur met alle essentiële elementen voor maximale conversie.</p>
+            
+            <div class="prompt-box">
+Schrijf een complete landing page outline voor [AANBOD/PRODUCT].
+
+Aanbod details:
+- Wat bied je aan: [beschrijving]
+- Doelgroep: [wie]
+- Prijs/investering: [bedrag]
+- Belangrijkste voordelen: [3-5 voordelen]
+- Unieke differentiator: [USP]
+- Garantie/zekerheid: [wat bied je aan]
+- Social proof beschikbaar: [testimonials/cijfers/logos]
+
+Maak een outline met deze secties:
+1. Hero section (headline + subheadline + CTA + hero image)
+2. Problem section (pijnpunten benoemen)
+3. Solution section (hoe jij het oplost)
+4. Features & Benefits (wat + waarom het belangrijk is)
+5. Social Proof (testimonials/cases/cijfers)
+6. How It Works (3-5 stappen)
+7. Pricing (helder en transparant)
+8. FAQ (5 meest voorkomende bezwaren)
+9. Final CTA (urgentie + laatste push)
+
+Geef bij elke sectie:
+- Concrete copy suggesties
+- Visual ideeën
+- CTA buttons waar relevant
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Zet je sterkste voordeel in de headline. Gebruik cijfers en specifieke resultaten. Test verschillende CTA button teksten. Zorg dat de pagina mobile-friendly is - 60%+ traffic is mobile.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">7</span>
+                <div class="prompt-title">Brand Slogan Generator</div>
+            </div>
+            <p class="prompt-description">Ontwikkel memorabele slogans die je merkidentiteit versterken en bij je doelgroep blijven hangen.</p>
+            
+            <div class="prompt-box">
+Genereer 5 unieke slogan-ideeën voor [MERK/BEDRIJF].
+
+Merkinformatie:
+- Industrie: [bijv. duurzame mode]
+- Merkwaarden: [wat is belangrijk voor jullie]
+- Doelgroep: [demografisch + psychografisch]
+- Merkstem: [eigenschappen: trendy/serieus/speels/etc.]
+- Missie: [waarom bestaat jullie merk]
+- Concurrentie: [wie zijn de anderen + hun slogans]
+
+Slogan criteria:
+- Kort (max 5-7 woorden)
+- Memorabel (blijft hangen)
+- Uniek (onderscheidend van concurrentie)
+- Tijdloos (niet trendy-gevoelig)
+- Betekenisvol (zegt iets over jullie waarde)
+- Uitspreken is makkelijk
+
+Geef per slogan:
+1. De slogan zelf
+2. Rationale: waarom deze werkt
+3. In welke context te gebruiken
+4. Mogelijke variaties
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Test je slogan door hem hardop uit te spreken. Google de slogan om te checken dat hij uniek is. Vraag feedback van mensen die je merk NIET kennen - zij zijn objectiever.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">8</span>
+                <div class="prompt-title">Blog Content Ideas Generator</div>
+            </div>
+            <p class="prompt-description">Genereer een lijst met SEO-vriendelijke blog onderwerpen die traffic genereren en je expertise tonen.</p>
+            
+            <div class="prompt-box">
+Lijst 10 blog post ideeën om [PRODUCT/DIENST] te promoten.
+
+Context:
+- Product/dienst: [wat verkoop je]
+- Doelgroep: [wie lezen deze blogs]
+- Hun grootste uitdagingen: [problemen die ze hebben]
+- Zoekwoorden/topics: [SEO keywords indien bekend]
+- Content doel: [awareness/educatie/conversie]
+- Huidige content: [wat heb je al]
+
+Voor elke blog post idee geef:
+1. Werktitel (SEO-friendly)
+2. Hook/introductie suggestie
+3. Belangrijkste punten om te behandelen (outline)
+4. Hoe het linkt naar je product (subtiel)
+5. Target keywords
+6. Geschatte zoekvolume/interesse
+7. Content format (how-to/lijst/case study/etc.)
+8. Call-to-action suggestie
+
+Mix verschillende content types:
+- Educational (80%)
+- Promotional (20%)
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Gebruik tools zoals AnswerThePublic voor vraag-ideeën. Kijk naar concurrentie blogs met tools als Ahrefs. Schrijf evergreen content die jaren relevant blijft.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">9</span>
+                <div class="prompt-title">Product Description Writer</div>
+            </div>
+            <p class="prompt-description">Schrijf compacte maar overtuigende productbeschrijvingen die features omzetten in voordelen en verkopen stimuleren.</p>
+            
+            <div class="prompt-box">
+Schrijf een overtuigende productbeschrijving van max 100 woorden voor [PRODUCT].
+
+Product informatie:
+- Productnaam: [naam]
+- Categorie: [wat is het]
+- Belangrijkste features: [technische specs/eigenschappen]
+- Voor wie is het: [doelgroep]
+- Grootste voordeel: [waarom kopen]
+- Uniek aspect: [onderscheidend element]
+- Prijs positionering: [budget/mid/premium]
+
+De beschrijving moet:
+1. Beginnen met de belangrijkste voordeel (niet feature)
+2. Features omzetten naar voordelen ("duurzaam materiaal" → "gaat jaren mee")
+3. Emotie triggeren (hoe voelt de klant zich na aankoop)
+4. Specifiek zijn (cijfers, details)
+5. Eindigen met subtiele call-to-action
+6. Scannbaar zijn (korte zinnen)
+7. SEO keywords natuurlijk integreren
+
+Tone: [professioneel/casual/luxe/toegankelijk]
+            </div>
+            
+            <div class="example-box">
+                <h4>💡 Voorbeeld Structuur</h4>
+                <p>Zin 1: Grootste voordeel/transformatie<br>
+                Zin 2-3: Key features als voordelen<br>
+                Zin 4: Social proof/trust element<br>
+                Zin 5: Emotionele trigger/use case<br>
+                Zin 6: Soft CTA</p>
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Gebruik "je/jij" in plaats van "u" voor warmere tone (tenzij zeer formeel). Voeg sensory woorden toe (zacht, krachtig, strak). Test verschillende versies met A/B testing.</p>
+            </div>
+        </div>
+
+        <div class="prompt-section">
+            <div class="prompt-header">
+                <span class="prompt-number">10</span>
+                <div class="prompt-title">Brand Voice Guide Creator</div>
+            </div>
+            <p class="prompt-description">Ontwikkel een heldere brand voice guide zodat alle communicatie consistent blijft, ongeacht wie content maakt.</p>
+            
+            <div class="prompt-box">
+Creëer een praktische brand voice guide voor [BEDRIJF].
+
+Bedrijf context:
+- Wat we doen: [kernactiviteit]
+- Doelgroep: [wie]
+- Merkwaarden: [3-5 kernwaarden]
+- Huidige tone (als die er is): [beschrijving]
+- Inspirerende merken: [wie doet het goed in je ogen]
+- Wat we NIET willen zijn: [te vermijden karakteristieken]
+
+Maak een guide met:
+
+1. STEM ATTRIBUTEN
+- 4 eigenschappen die onze stem definiëren
+- Voor elk: definitie + DO's en DON'Ts
+- Voorbeeld zinnen die passen (en niet passen)
+
+2. TAALGEBRUIK
+- Vocabulaire voorkeuren (formeel/informeel)
+- Woorden die we WEL gebruiken
+- Woorden die we NIET gebruiken
+- Grammatica stijl (lange/korte zinnen, actief/passief)
+
+3. PRAKTISCHE VOORBEELDEN
+- Email opening/closing
+- Social media post style
+- Customer service responses
+- Marketing copy tone
+
+4. EMOJI & INTERPUNCTIE
+- Emoji gebruik (ja/nee, wanneer wel)
+- Uitroeptekens beleid
+- Humor niveau
+
+Maak het actionable en makkelijk te volgen voor iedereen in het team.
+            </div>
+            
+            <div class="prompt-tips">
+                <h4>✨ Pro Tips</h4>
+                <p>Test je brand voice door oude content te herschrijven. Deel de guide met je hele team. Update elk jaar op basis van feedback en merkevolutie. Voeg real-life voorbeelden toe van jullie beste content.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">PromptFlow</div>
+            <div class="footer-text">Smarter prompts. Better flow.</div>
+            <div class="footer-text">© 2026 PromptFlow.ai - Alle rechten voorbehouden</div>
+            <div class="footer-text" style="margin-top: 15px; font-style: italic;">
+                💡 Tip: Bewaar dit document en gebruik het als referentie voor al je marketing projecten
+            </div>
+            <button class="download-btn" onclick="window.print()">📥 Download als PDF</button>
+        </div>
+    </div>
+</body>
+</html>
