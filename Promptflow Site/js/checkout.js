@@ -10,6 +10,56 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('checkoutForm');
   const successBox = document.getElementById('checkoutSuccess');
   const orderRefEl = document.getElementById('orderRef');
+  const SITE_ORIGIN = 'https://ultravoeding.nl'; // zet hier je live domein
+
+  // Mapping from product IDs (as used in index.html buttons) to public file paths under the site.
+  // IMPORTANT: Ensure the PDF files are deployed under `Promptflow Site/downloads/` so they are publicly reachable.
+  // Example: Promptflow Site/downloads/Marketing Prompts Pack.pdf
+  const PRODUCT_DOWNLOADS = {
+    marketing: [{ name: 'Marketing Prompts Pack.pdf', path: 'downloads/Marketing Prompts Pack.pdf' }],
+    content:   [{ name: 'Content Creator Pack.pdf',  path: 'downloads/Content Creator Pack.pdf' }],
+    business:  [{ name: 'Business Builder Pack.pdf', path: 'downloads/Business Builder Pack.pdf' }],
+    automation:[{ name: 'Automation Prompt Pack.pdf', path: 'downloads/Automation Prompt Pack.pdf' }],
+    creative:  [{ name: 'Creative AI Pack.pdf',      path: 'downloads/Creative AI Pack.pdf' }],
+    // Bundle includes all packs
+    bundle: [
+      { name: 'Marketing Prompts Pack.pdf', path: 'downloads/Marketing Prompts Pack.pdf' },
+      { name: 'Content Creator Pack.pdf',  path: 'downloads/Content Creator Pack.pdf' },
+      { name: 'Business Builder Pack.pdf', path: 'downloads/Business Builder Pack.pdf' },
+      { name: 'Automation Prompt Pack.pdf', path: 'downloads/Automation Prompt Pack.pdf' },
+      { name: 'Creative AI Pack.pdf',      path: 'downloads/Creative AI Pack.pdf' }
+    ]
+  };
+
+  // Resolve unique downloads from cart items, expanding bundles and deduplicating.
+  function resolveDownloads(cart) {
+    const seen = new Set();
+    const files = [];
+    cart.forEach(it => {
+      const entries = PRODUCT_DOWNLOADS[it.id] || [];
+      entries.forEach(f => {
+        const key = f.path.toLowerCase();
+        if (!seen.has(key)) {
+          seen.add(key);
+          files.push(f);
+        }
+      });
+    });
+    return files;
+  }
+
+  // Build HTML list with absolute URLs for email templates
+  function buildDownloadLinksHtml(cart) {
+    const files = resolveDownloads(cart);
+    const downloadLinksText = files.map(f => new URL(f.path, (SITE_ORIGIN || window.location.origin)).href).join('\n');
+    // payload.download_links_text = downloadLinksText;
+    if (files.length === 0) return '<p>No downloads available for this order.</p>';
+    const items = files.map(f => {
+      const href = new URL(f.path, window.location.origin).href;
+      return `<li><a href="${href}" target="_blank" rel="noopener">${f.name}</a></li>`;
+    }).join('');
+    return `<ul>${items}</ul>`;
+  }
 
   function loadCart() {
     try {
@@ -110,6 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Attempt to send via EmailJS if configured
     const canEmail = typeof emailjs !== 'undefined' && EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' && EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID';
 
+  // Build download links HTML to include in the email template
+    const downloadLinksHtml = buildDownloadLinksHtml(cart);
+
     const payload = {
       // Recipient
       to_email: email,
@@ -122,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
       order_items: itemsList,
       order_items_html: itemsListHtml,
       order_total: `€${Number(total).toFixed(0)}`,
+      download_links_html: downloadLinksHtml,
       year: new Date().getFullYear()
     };
 
