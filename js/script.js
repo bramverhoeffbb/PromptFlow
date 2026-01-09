@@ -191,7 +191,13 @@ document.addEventListener('DOMContentLoaded', function() {
     function loadCart() {
         try {
             const raw = localStorage.getItem(CART_KEY);
-            return raw ? JSON.parse(raw) : [];
+            const parsed = raw ? JSON.parse(raw) : [];
+            // Sanitize: remove deprecated 'content' product from cart
+            const cleaned = Array.isArray(parsed) ? parsed.filter(it => it && it.id !== 'content') : [];
+            if (cleaned.length !== parsed.length) {
+                localStorage.setItem(CART_KEY, JSON.stringify(cleaned));
+            }
+            return cleaned;
         } catch { return []; }
     }
 

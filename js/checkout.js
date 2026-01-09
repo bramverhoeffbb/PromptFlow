@@ -10,21 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('checkoutForm');
   const successBox = document.getElementById('checkoutSuccess');
   const orderRefEl = document.getElementById('orderRef');
-  const SITE_ORIGIN = 'https://ultravoeding.nl'; // zet hier je live domein
+  // Build absolute URLs relative to current site location (works with custom domains and GitHub Pages subpaths)
+  const BASE_URL = new URL('.', window.location.href);
 
   // Mapping from product IDs (as used in index.html buttons) to public file paths under the site.
   // IMPORTANT: Ensure the PDF files are deployed under `Promptflow Site/downloads/` so they are publicly reachable.
   // Example: Promptflow Site/downloads/Marketing Prompts Pack.pdf
   const PRODUCT_DOWNLOADS = {
     marketing: [{ name: 'Marketing Prompts Pack.pdf', path: 'downloads/Marketing Prompts Pack.pdf' }],
-    content:   [{ name: 'Content Creator Pack.pdf',  path: 'downloads/Content Creator Pack.pdf' }],
     business:  [{ name: 'Business Builder Pack.pdf', path: 'downloads/Business Builder Pack.pdf' }],
     automation:[{ name: 'Automation Prompt Pack.pdf', path: 'downloads/Automation Prompt Pack.pdf' }],
     creative:  [{ name: 'Creative AI Pack.pdf',      path: 'downloads/Creative AI Pack.pdf' }],
     // Bundle includes all packs
     bundle: [
       { name: 'Marketing Prompts Pack.pdf', path: 'downloads/Marketing Prompts Pack.pdf' },
-      { name: 'Content Creator Pack.pdf',  path: 'downloads/Content Creator Pack.pdf' },
       { name: 'Business Builder Pack.pdf', path: 'downloads/Business Builder Pack.pdf' },
       { name: 'Automation Prompt Pack.pdf', path: 'downloads/Automation Prompt Pack.pdf' },
       { name: 'Creative AI Pack.pdf',      path: 'downloads/Creative AI Pack.pdf' }
@@ -51,11 +50,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // Build HTML list with absolute URLs for email templates
   function buildDownloadLinksHtml(cart) {
     const files = resolveDownloads(cart);
-    const downloadLinksText = files.map(f => new URL(f.path, (SITE_ORIGIN || window.location.origin)).href).join('\n');
+    const downloadLinksText = files.map(f => new URL(f.path, BASE_URL).href).join('\n');
     // payload.download_links_text = downloadLinksText;
     if (files.length === 0) return '<p>No downloads available for this order.</p>';
     const items = files.map(f => {
-      const href = new URL(f.path, window.location.origin).href;
+      const href = new URL(f.path, BASE_URL).href;
       return `<li><a href="${href}" target="_blank" rel="noopener">${f.name}</a></li>`;
     }).join('');
     return `<ul>${items}</ul>`;
@@ -162,6 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Build download links HTML to include in the email template
     const downloadLinksHtml = buildDownloadLinksHtml(cart);
+    const downloadLinksText = resolveDownloads(cart).map(f => new URL(f.path, BASE_URL).href).join('\n');
 
     const payload = {
       // Recipient
@@ -176,6 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
       order_items_html: itemsListHtml,
       order_total: `€${Number(total).toFixed(0)}`,
       download_links_html: downloadLinksHtml,
+      download_links_text: downloadLinksText,
       year: new Date().getFullYear()
     };
 
