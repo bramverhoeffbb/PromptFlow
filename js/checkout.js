@@ -17,16 +17,30 @@ document.addEventListener('DOMContentLoaded', () => {
   // IMPORTANT: Ensure the PDF files are deployed under `Promptflow Site/downloads/` so they are publicly reachable.
   // Example: Promptflow Site/downloads/Marketing Prompts Pack.pdf
   const PRODUCT_DOWNLOADS = {
-    marketing: [{ name: 'Marketing Prompts Pack.pdf', path: 'downloads/Marketing Prompts Pack.pdf' }],
-    business:  [{ name: 'Business Builder Pack.pdf', path: 'downloads/Business Builder Pack.pdf' }],
-    automation:[{ name: 'Automation Prompt Pack.pdf', path: 'downloads/Automation Prompt Pack.pdf' }],
-    creative:  [{ name: 'Creative AI Pack.pdf',      path: 'downloads/Creative AI Pack.pdf' }],
+    marketing:        [{ name: 'Marketing Prompts Pack.pdf',       path: 'downloads/Marketing Prompts Pack.pdf' }],
+    business:         [{ name: 'Business Builder Pack.pdf',         path: 'downloads/Business Builder Pack.pdf' }],
+    automation:       [{ name: 'Automation Prompt Pack.pdf',        path: 'downloads/Automation Prompt Pack.pdf' }],
+    creative:         [{ name: 'Creative AI Pack.pdf',              path: 'downloads/Creative AI Pack.pdf' }],
+    contentcreator:   [{ name: 'Content Creator Pack.pdf',          path: 'downloads/Content Creator Pack.pdf' }],
+    freelance:        [{ name: 'Freelance & Agency Pack.pdf',       path: 'downloads/Freelance & Agency Pack.pdf' }],
+    personalbranding: [{ name: 'Personal Branding Pack.pdf',        path: 'downloads/Personal Branding Pack.pdf' }],
+    productivity:     [{ name: 'AI Productivity Pack.pdf',          path: 'downloads/AI Productivity Pack.pdf' }],
+    seo:              [{ name: 'SEO & Blogging Pack.pdf',           path: 'downloads/SEO & Blogging Pack.pdf' }],
+    social:           [{ name: 'Social Media Growth Pack.pdf',      path: 'downloads/Social Media Growth Pack.pdf' }],
+    solopreneur:      [{ name: 'Solopreneur Starter Pack.pdf',      path: 'downloads/Solopreneur Starter Pack.pdf' }],
     // Bundle includes all packs
     bundle: [
-      { name: 'Marketing Prompts Pack.pdf', path: 'downloads/Marketing Prompts Pack.pdf' },
-      { name: 'Business Builder Pack.pdf', path: 'downloads/Business Builder Pack.pdf' },
-      { name: 'Automation Prompt Pack.pdf', path: 'downloads/Automation Prompt Pack.pdf' },
-      { name: 'Creative AI Pack.pdf',      path: 'downloads/Creative AI Pack.pdf' }
+      { name: 'Marketing Prompts Pack.pdf',       path: 'downloads/Marketing Prompts Pack.pdf' },
+      { name: 'Business Builder Pack.pdf',         path: 'downloads/Business Builder Pack.pdf' },
+      { name: 'Automation Prompt Pack.pdf',        path: 'downloads/Automation Prompt Pack.pdf' },
+      { name: 'Creative AI Pack.pdf',              path: 'downloads/Creative AI Pack.pdf' },
+      { name: 'Content Creator Pack.pdf',          path: 'downloads/Content Creator Pack.pdf' },
+      { name: 'Freelance & Agency Pack.pdf',       path: 'downloads/Freelance & Agency Pack.pdf' },
+      { name: 'Personal Branding Pack.pdf',        path: 'downloads/Personal Branding Pack.pdf' },
+      { name: 'AI Productivity Pack.pdf',          path: 'downloads/AI Productivity Pack.pdf' },
+      { name: 'SEO & Blogging Pack.pdf',           path: 'downloads/SEO & Blogging Pack.pdf' },
+      { name: 'Social Media Growth Pack.pdf',      path: 'downloads/Social Media Growth Pack.pdf' },
+      { name: 'Solopreneur Starter Pack.pdf',      path: 'downloads/Solopreneur Starter Pack.pdf' }
     ]
   };
 

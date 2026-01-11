@@ -118,16 +118,58 @@
                 <p class="text-muted">Choose the perfect pack for your needs</p>
                 <div class="divider mx-auto"></div>
             </div>
+            <!-- Quick Filters -->
+            <div class="d-flex flex-wrap justify-content-center gap-2 mb-4" id="productFilters">
+                <button class="btn btn-sm btn-outline-secondary active" data-filter="all">All</button>
+                <button class="btn btn-sm btn-outline-secondary" data-filter="marketing">Marketing</button>
+                <button class="btn btn-sm btn-outline-secondary" data-filter="content">Content</button>
+                <button class="btn btn-sm btn-outline-secondary" data-filter="business">Business</button>
+                <button class="btn btn-sm btn-outline-secondary" data-filter="automation">Automation</button>
+                <button class="btn btn-sm btn-outline-secondary" data-filter="creative">Creative</button>
+            </div>
             
-            <div class="row g-4">
+            <div class="row g-3 products-grid">
+                <!-- Bundle Card -->
+                <div class="col-md-6 col-lg-4" data-category="bundle">
+                    <div class="card h-100 border-0 shadow-sm bundle-card reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-gradient-primary bg-opacity-10 text-gradient-primary">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div><span class="badge bg-gradient-primary bg-opacity-10 text-gradient-primary mt-3">Bundle</span></div>
+                                <h4 class="mt-3 mb-2">All-in Bundle</h4>
+                                <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                                    <span class="text-decoration-line-through text-muted">€169</span>
+                                    <h3 class="text-gradient-primary mb-0">€49</h3>
+                                </div>
+                                <div class="badge bg-success bg-opacity-10 text-success mb-3">Save €120 (71% off)</div>
+                                <div class="text-muted small mb-3">All 11 prompt packs included</div>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>11 premium prompt packs (€169 value)</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>71% discount - save €120</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Lifetime access to all updates</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Instant PDF downloads</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Works with ChatGPT & Claude</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/allinbundle.html">View details</a>
+                                <button class="btn btn-gradient-primary text-white add-to-cart" data-id="bundle" data-name="All-in Bundle" data-price="49">Get the Bundle</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Product Card 1 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
+                <div class="col-md-6 col-lg-4" data-category="marketing">
+                    <div class="card h-100 border-0 shadow-sm reveal">
                         <div class="card-body p-4">
                             <div class="text-center mb-4">
                                 <div class="icon-box bg-primary bg-opacity-10 text-primary">
                                     <i class="fas fa-bullhorn"></i>
                                 </div>
+                                <div><span class="badge bg-primary bg-opacity-10 text-primary mt-3">Marketing</span></div>
                                 <h4 class="mt-3 mb-2">Marketing Prompts Pack</h4>
                                 <h3 class="text-primary">€19</h3>
                             </div>
@@ -138,7 +180,8 @@
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Social media plans</li>
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Landing page outlines</li>
                             </ul>
-                            <div class="d-grid mt-4">
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/marketingpromptpack-detail.html">View details</a>
                                 <button class="btn btn-primary add-to-cart" data-id="marketing" data-name="Marketing Prompts Pack" data-price="19">Add to Cart</button>
                             </div>
                         </div>
@@ -146,16 +189,41 @@
                 </div>
 
                 <!-- Product Card 2 -->
-                
+                <div class="col-md-6 col-lg-4" data-category="content">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-warning bg-opacity-10 text-warning">
+                                    <i class="fas fa-video"></i>
+                                </div>
+                                <div><span class="badge bg-warning bg-opacity-10 text-warning mt-3">Content</span></div>
+                                <h4 class="mt-3 mb-2">Content Creator Pack</h4>
+                                <h3 class="text-warning">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>YouTube titels & beschrijvingen</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>TikTok scripts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Hashtags & carousel content</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Blog outlines</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Contentkalenders</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/contentcreatorpack-detail.html">View details</a>
+                                <button class="btn btn-warning text-dark add-to-cart" data-id="contentcreator" data-name="Content Creator Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Product Card 3 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
+                <div class="col-md-6 col-lg-4" data-category="business">
+                    <div class="card h-100 border-0 shadow-sm reveal">
                         <div class="card-body p-4">
                             <div class="text-center mb-4">
                                 <div class="icon-box bg-success bg-opacity-10 text-success">
                                     <i class="fas fa-briefcase"></i>
                                 </div>
+                                <div><span class="badge bg-success bg-opacity-10 text-success mt-3">Business</span></div>
                                 <h4 class="mt-3 mb-2">Business Builder Pack</h4>
                                 <h3 class="text-success">€19</h3>
                             </div>
@@ -166,7 +234,8 @@
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pricing strategies</li>
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Customer personas</li>
                             </ul>
-                            <div class="d-grid mt-4">
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/businessbuilderpack.html">View details</a>
                                 <button class="btn btn-success add-to-cart" data-id="business" data-name="Business Builder Pack" data-price="19">Add to Cart</button>
                             </div>
                         </div>
@@ -174,13 +243,14 @@
                 </div>
 
                 <!-- Product Card 4 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
+                <div class="col-md-6 col-lg-4" data-category="automation">
+                    <div class="card h-100 border-0 shadow-sm reveal">
                         <div class="card-body p-4">
                             <div class="text-center mb-4">
                                 <div class="icon-box bg-info bg-opacity-10 text-info">
                                     <i class="fas fa-robot"></i>
                                 </div>
+                                <div><span class="badge bg-info bg-opacity-10 text-info mt-3">Automation</span></div>
                                 <h4 class="mt-3 mb-2">Automation Prompt Pack</h4>
                                 <h3 class="text-info">€15</h3>
                             </div>
@@ -191,7 +261,8 @@
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Customer service</li>
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business analytics</li>
                             </ul>
-                            <div class="d-grid mt-4">
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/automationpromptpack.html">View details</a>
                                 <button class="btn btn-info text-white add-to-cart" data-id="automation" data-name="Automation Prompt Pack" data-price="15">Add to Cart</button>
                             </div>
                         </div>
@@ -199,13 +270,14 @@
                 </div>
 
                 <!-- Product Card 5 -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm">
+                <div class="col-md-6 col-lg-4" data-category="creative">
+                    <div class="card h-100 border-0 shadow-sm reveal">
                         <div class="card-body p-4">
                             <div class="text-center mb-4">
                                 <div class="icon-box bg-purple bg-opacity-10 text-purple">
                                     <i class="fas fa-palette"></i>
                                 </div>
+                                <div><span class="badge bg-purple bg-opacity-10 text-purple mt-3">Creative</span></div>
                                 <h4 class="mt-3 mb-2">Creative AI Pack</h4>
                                 <h3 class="text-purple">€15</h3>
                             </div>
@@ -216,35 +288,169 @@
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Logo design</li>
                                 <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Creative writing</li>
                             </ul>
-                            <div class="d-grid mt-4">
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/creativeaipack.html">View details</a>
                                 <button class="btn btn-purple text-white add-to-cart" data-id="creative" data-name="Creative AI Pack" data-price="15">Add to Cart</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Bundle Card -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 border-0 shadow-sm bundle-card">
+                
+                <!-- Product Card: Freelance & Agency Pack -->
+                <div class="col-md-6 col-lg-4" data-category="business">
+                    <div class="card h-100 border-0 shadow-sm reveal">
                         <div class="card-body p-4">
                             <div class="text-center mb-4">
-                                <div class="icon-box bg-danger bg-opacity-10 text-danger">
-                                    <i class="fas fa-gem"></i>
+                                <div class="icon-box bg-dark bg-opacity-10 text-dark">
+                                    <i class="fas fa-user-tie"></i>
                                 </div>
-                                <h4 class="mt-3 mb-2">All-in Bundle</h4>
-                                <h3 class="text-danger">€49 <small class="text-muted text-decoration-line-through">€68</small></h3>
-                                <div class="badge bg-danger bg-opacity-10 text-danger p-2 mt-2 mb-3">Save €19 (28%)</div>
+                                <div><span class="badge bg-dark bg-opacity-10 text-dark mt-3">Business</span></div>
+                                <h4 class="mt-3 mb-2">Freelance & Agency Pack</h4>
+                                <h3 class="text-dark">€19</h3>
                             </div>
                             <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>All 4 prompt packs</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>50+ total prompts</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Marketing & content</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Business & automation</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Creative AI tools</li>
-                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Bonus: Exclusive prompts</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Freelance bio’s</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>High-ticket aanbiedingen</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Intakeformulieren & proposals</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Cold DM’s & positionering</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Retainer-modellen & surveys</li>
                             </ul>
-                            <div class="d-grid mt-4">
-                                <button class="btn btn-danger add-to-cart" data-id="bundle" data-name="All-in Bundle" data-price="49">Get the Bundle</button>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/freelanceagencypack.html">View details</a>
+                                <button class="btn btn-dark add-to-cart" data-id="freelance" data-name="Freelance & Agency Pack" data-price="19">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card: Personal Branding Pack -->
+                <div class="col-md-6 col-lg-4" data-category="content">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-pink bg-opacity-10 text-pink">
+                                    <i class="fas fa-id-badge"></i>
+                                </div>
+                                <div><span class="badge bg-pink bg-opacity-10 text-pink mt-3">Content</span></div>
+                                <h4 class="mt-3 mb-2">Personal Branding Pack</h4>
+                                <h3 class="text-pink">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Brand positioning</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Social media bio’s & content hooks</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Storytelling frameworks</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>About pages & elevator pitches</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Thought leadership & nieuwsbrieven</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/personalbrandingpack.html">View details</a>
+                                <button class="btn btn-pink text-white add-to-cart" data-id="personalbranding" data-name="Personal Branding Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card: AI Productivity Pack -->
+                <div class="col-md-6 col-lg-4" data-category="productivity">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-secondary bg-opacity-10 text-secondary">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div><span class="badge bg-secondary bg-opacity-10 text-secondary mt-3">Productivity</span></div>
+                                <h4 class="mt-3 mb-2">AI Productivity Pack</h4>
+                                <h3 class="text-secondary">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Dagelijkse workflows & weekplanning</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Snellere e-mail prompts & meeting summaries</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Taakprioritering & besluitvorming</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Focus checklists & scorecards</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/aiproductivitypack.html">View details</a>
+                                <button class="btn btn-secondary add-to-cart" data-id="productivity" data-name="AI Productivity Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card: SEO & Blogging Pack -->
+                <div class="col-md-6 col-lg-4" data-category="seo">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-success bg-opacity-10 text-success">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <div><span class="badge bg-success bg-opacity-10 text-success mt-3">SEO</span></div>
+                                <h4 class="mt-3 mb-2">SEO & Blogging Pack</h4>
+                                <h3 class="text-success">€19</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>SEO blogideeën & outlines</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Intro’s & CTA’s</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Meta titles & descriptions</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Keywords & content clusters</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Content refresh & FAQ schema’s</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/seoandbloggingpack.html">View details</a>
+                                <button class="btn btn-success add-to-cart" data-id="seo" data-name="SEO & Blogging Pack" data-price="19">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card: Social Media Growth Pack -->
+                <div class="col-md-6 col-lg-4" data-category="social">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-info bg-opacity-10 text-info">
+                                    <i class="fas fa-hashtag"></i>
+                                </div>
+                                <div><span class="badge bg-info bg-opacity-10 text-info mt-3">Social</span></div>
+                                <h4 class="mt-3 mb-2">Social Media Growth Pack</h4>
+                                <h3 class="text-info">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>30 posts per platform & virale hooks</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Contentplanningen & CTA’s</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Storytelling formats & DM-strategieën</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Trend-based content & repurposing</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/socialmediagrowthpack.html">View details</a>
+                                <button class="btn btn-info text-white add-to-cart" data-id="social" data-name="Social Media Growth Pack" data-price="15">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card: Solopreneur Starter Pack -->
+                <div class="col-md-6 col-lg-4" data-category="business">
+                    <div class="card h-100 border-0 shadow-sm reveal">
+                        <div class="card-body p-4">
+                            <div class="text-center mb-4">
+                                <div class="icon-box bg-primary bg-opacity-10 text-primary">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div><span class="badge bg-primary bg-opacity-10 text-primary mt-3">Business</span></div>
+                                <h4 class="mt-3 mb-2">Solopreneur Starter Pack</h4>
+                                <h3 class="text-primary">€15</h3>
+                            </div>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Online businessideeën & validatieplannen</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>No-code stacks & salespagina outlines</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Pricing strategieën & launch checklists</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Simpele funnels & eerste 30 dagen content</li>
+                                <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Groei naar €1.000 omzet</li>
+                            </ul>
+                            <div class="d-grid mt-4 gap-2">
+                                <a class="btn btn-outline-secondary" href="Products/solopreneurstarterpack.html">View details</a>
+                                <button class="btn btn-primary add-to-cart" data-id="solopreneur" data-name="Solopreneur Starter Pack" data-price="15">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -630,3 +836,40 @@
     <script src="js/script.js"></script>
 </body>
 </html>
+<script>
+// Reveal on scroll for product cards
+(function(){
+  const revealEls = document.querySelectorAll('#products .reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.classList.add('fade-in-up');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el=>io.observe(el));
+  } else {
+    revealEls.forEach(el=>el.classList.add('fade-in-up'));
+  }
+})();
+
+// Category filters
+(function(){
+  const filterWrap = document.getElementById('productFilters');
+  if (!filterWrap) return;
+  filterWrap.addEventListener('click', (e)=>{
+    const btn = e.target.closest('button[data-filter]');
+    if(!btn) return;
+    filterWrap.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const val = btn.dataset.filter;
+    document.querySelectorAll('#products .products-grid > [data-category]').forEach(card=>{
+      const cat = card.getAttribute('data-category');
+      if (val === 'all' || cat === val) card.classList.remove('d-none');
+      else card.classList.add('d-none');
+    });
+  });
+})();
+</script>

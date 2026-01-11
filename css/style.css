@@ -70,6 +70,26 @@ a {
     color: var(--purple) !important;
 }
 
+/* Pink utilities */
+.bg-pink {
+    background-color: var(--pink) !important;
+}
+
+.text-pink {
+    color: var(--pink) !important;
+}
+
+.btn-pink {
+    background-color: var(--pink);
+    border-color: var(--pink);
+}
+
+.btn-pink:hover, .btn-pink:focus {
+    background-color: #db2777;
+    border-color: #db2777;
+    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+}
+
 /* Navbar */
 .navbar {
     padding: 1rem 0;
@@ -415,3 +435,46 @@ a {
 ::-webkit-scrollbar-thumb:hover {
     background: #2563EB;
 }
+/* Products Grid Tweaks */
+.products-grid { row-gap: 1rem !important; }
+@media (min-width: 1200px) {
+  /* Force 4 cards per row on xl+ for a tighter layout */
+  .products-grid > [class*='col-'] { flex: 0 0 25%; max-width: 25%; }
+}
+
+/* Playful card hover effects */
+#products .card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  background: radial-gradient(1200px 1200px at 50% -20%, rgba(59,130,246,0.05), transparent 40%) #fff;
+  transform-origin: center;
+  position: relative;
+}
+#products .card:hover {
+  transform: translateY(-8px) rotate3d(1, -1, 0, 0.5deg);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.18);
+}
+#products .card .icon-box { transition: transform 0.35s ease, box-shadow 0.35s ease; }
+#products .card:hover .icon-box { transform: scale(1.08) rotate(3deg); box-shadow: 0 10px 18px rgba(0,0,0,0.10); }
+@media (min-width: 992px) {
+  #products .card-body { padding: 1.5rem; }
+  #products .card .text-center.mb-4 { margin-bottom: 1rem !important; }
+}
+/* Subtle shine on hover */
+#products .card::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.25) 50%, transparent 80%);
+  transform: translateX(-120%); transition: transform 0.6s ease; pointer-events: none;
+}
+#products .card:hover::after { transform: translateX(120%); }
+/* Equal height product cards */
+#products .card .card-body { display: flex; flex-direction: column; height: 100%; }
+#products .card .card-body > .text-center { flex: 0 0 auto; }
+#products .card .card-body > ul { flex: 1 1 auto; margin-bottom: 0; }
+#products .card .card-body > .d-grid { flex: 0 0 auto; margin-top: 1rem; }
+/* Equal height product cards */
+#products .card .card-body { display: flex; flex-direction: column; height: 100%; }
+#products .card .card-body > .text-center { flex: 0 0 auto; }
+#products .card .card-body > ul { flex: 1 1 auto; margin-bottom: 0; }
+#products .card .card-body > .d-grid { flex: 0 0 auto; margin-top: 1rem; }
