@@ -1,255 +1,80 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Prompt Pack</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #FFFFFF;
-            color: #0F172A;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-            color: #FFFFFF;
-            padding: 60px 40px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-        
-        .pack-title {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .pack-price {
-            font-size: 24px;
-            font-weight: 600;
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
-        }
-        
-        .intro {
-            background: #F8FAFC;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            border-left: 5px solid #3B82F6;
-        }
-        
-        .intro h2 {
-            color: #3B82F6;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .prompt {
-            background: #FFFFFF;
-            border: 2px solid #E2E8F0;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .prompt:hover {
-            border-color: #3B82F6;
-            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
-        }
-        
-        .prompt-number {
-            background: #3B82F6;
-            color: #FFFFFF;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin-right: 15px;
-            font-size: 16px;
-        }
-        
-        .prompt-content {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .prompt-text {
-            flex: 1;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #E2E8F0;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #3B82F6;
-            margin-bottom: 10px;
-        }
-        
-        .footer-text {
-            color: #64748B;
-            font-size: 14px;
-        }
-        
-        .download-btn {
-            background: #3B82F6;
-            color: #FFFFFF;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            background: #2563EB;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-        
-        @media print {
-            .download-btn {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Automation Prompt Pack — PromptFlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Poppins',sans-serif;background:#fff;color:#0F172A;line-height:1.7;margin:0;padding:0}
+    .wrap{max-width:900px;margin:0 auto;padding:40px 20px}
+    .hero{background:linear-gradient(135deg,#1E40AF,#1E3A8A);color:#fff;padding:60px 32px;border-radius:16px;margin-bottom:32px;text-align:center}
+    .logo{font-weight:700;font-size:24px;margin-bottom:8px;letter-spacing:0.5px}
+    .title{font-weight:700;font-size:36px;margin:0 0 16px;line-height:1.2}
+    .subtitle{font-size:18px;opacity:0.9;max-width:700px;margin:0 auto 24px}
+    .price{display:inline-block;background:rgba(255,255,255,.15);padding:8px 24px;border-radius:999px;font-weight:600;font-size:18px}
+    .card{border:1px solid #E2E8F0;border-radius:12px;padding:28px;margin:24px 0;background:#fff;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.05)}
+    h3{font-size:22px;margin:0 0 16px;color:#1E293B}
+    ul{margin:0;padding:0;list-style:none}
+    li{margin:12px 0;position:relative;padding-left:24px}
+    li:before{content:"•";color:#1E40AF;position:absolute;left:0;font-weight:bold}
+    .footer{margin-top:60px;text-align:center;color:#64748B;font-size:14px;padding-top:24px;border-top:1px solid #E2E8F0}
+    .btn{display:inline-block;background:#1E40AF;color:#fff;border:0;border-radius:8px;padding:14px 32px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s ease;margin:8px 0}
+    .btn:hover{background:#1E3A8A;transform:translateY(-2px);box-shadow:0 4px 12px rgba(30, 58, 138, 0.2)}
+    .btn.secondary{background:#EFF6FF;color:#1E40AF;margin-right:12px}
+    .btn.secondary:hover{background:#DBEAFE;box-shadow:none}
+    .btn-group{margin:24px 0}
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">PromptFlow</div>
-            <div class="tagline">Smarter prompts. Better flow.</div>
-            <div class="pack-title">Automation Prompt Pack</div>
-            <div class="pack-price">€15</div>
-        </div>
+    <div class="wrap">
+      <div class="hero">
+        <div class="logo">PromptFlow</div>
+        <h1 class="title">Automation Prompt Pack</h1>
+        <p class="subtitle">Streamline your workflows with powerful automation tools</p>
+        <div class="price">€20</div>
+      </div>
+
+      <div class="card">
+        <h3>What's Inside</h3>
+        <ul>
+          <li><strong>Shopify Automation Suite</strong> - Automate store operations and boost sales</li>
+          <li><strong>Lead Generation Flows</strong> - Capture and nurture leads automatically</li>
+          <li><strong>E-commerce Workflows</strong> - Handle abandoned carts and recover lost sales</li>
+          <li><strong>Customer Service Bots</strong> - Improve response times with AI assistance</li>
+          <li><strong>Data Analysis Tools</strong> - Automate reports and gain insights</li>
+          <li><strong>Email Automation</strong> - Create personalized customer journeys</li>
+          <li><strong>Onboarding Systems</strong> - Streamline new customer experiences</li>
+          <li><strong>Agency Automation Kit</strong> - Essential tools for digital agencies</li>
+        </ul>
         
-        <div class="intro">
-            <h2>Automate your workflow with AI</h2>
-            <p>Save hours per week with smart automations. These 10 prompts help you automate repetitive tasks and boost productivity.</p>
+        <div class="btn-group">
+          <a href="#" class="btn secondary">View Sample</a>
+          <a href="#" class="btn">Get Instant Access - €20</a>
         </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">1</span>
-                <div class="prompt-text">Generate a list of 10 automation ideas for Shopify stores</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">2</span>
-                <div class="prompt-text">Write a Zapier workflow to collect leads from Facebook Ads</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">3</span>
-                <div class="prompt-text">Create an automation for abandoned cart recovery via email</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">4</span>
-                <div class="prompt-text">Generate prompts to improve customer service response times</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">5</span>
-                <div class="prompt-text">Write an AI prompt to summarize daily sales reports</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">6</span>
-                <div class="prompt-text">Create a workflow to automatically email new customers</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">7</span>
-                <div class="prompt-text">Write a script idea for ChatGPT in customer onboarding</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">8</span>
-                <div class="prompt-text">List 5 automations every digital agency should use</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">9</span>
-                <div class="prompt-text">Generate prompts for personalized product recommendations</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">10</span>
-                <div class="prompt-text">Write an AI prompt to analyze weekly business metrics</div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-logo">PromptFlow</div>
-            <div class="footer-text">Smarter prompts. Better flow.</div>
-            <div class="footer-text">© 2026 PromptFlow.ai - All rights reserved</div>
-            <button class="download-btn" onclick="window.print()">📥 Download / Print</button>
-        </div>
+      </div>
+      
+      <div class="card">
+        <h3>Why Choose This Pack?</h3>
+        <ul>
+          <li><strong>Time-Saving</strong> - Automate repetitive tasks and save hours weekly</li>
+          <li><strong>Proven Templates</strong> - Ready-to-use automation frameworks</li>
+          <li><strong>Versatile Solutions</strong> - Works with any business size or industry</li>
+          <li><strong>Immediate Impact</strong> - Start seeing results from day one</li>
+        </ul>
+      </div>
+      
+      <div class="card" style="text-align: center; background: #F8FAFF;">
+        <h3 style="color: #1E40AF;">Ready to Automate Your Workflow?</h3>
+        <p style="font-size: 18px; margin-bottom: 24px;">Get instant access to all automation tools and transform your business today.</p>
+        <a href="#" class="btn" style="font-size: 18px; padding: 16px 40px;">Get the Automation Pack - €20</a>
+        <p style="margin: 16px 0 0; color: #64748B; font-size: 14px;">One-time payment. Instant download. 30-day money-back guarantee.</p>
+      </div>
+      
+      <div class="footer">
+        <p>© 2026 PromptFlow. All rights reserved.</p>
+        <p><a href="#" style="color: #1E40AF; text-decoration: none;">Terms</a> | <a href="#" style="color: #1E40AF; text-decoration: none;">Privacy</a> | <a href="#" style="color: #1E40AF; text-decoration: none;">Contact</a></p>
+      </div>
     </div>
 </body>
 </html>

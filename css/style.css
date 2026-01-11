@@ -90,6 +90,54 @@ a {
     box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
 }
 
+/* Gradient Primary Button */
+.btn-gradient-primary {
+    background: linear-gradient(135deg, var(--primary), #6366F1);
+    border: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-gradient-primary:hover, .btn-gradient-primary:focus {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-gradient-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2563EB, #4F46E5);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.btn-gradient-primary:hover::after {
+    opacity: 1;
+}
+
+/* Purple button styles */
+.btn-purple {
+    background-color: var(--purple);
+    border-color: var(--purple);
+    color: white;
+}
+
+.btn-purple:hover, .btn-purple:focus {
+    background-color: #7c3aed;
+    border-color: #7c3aed;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+}
+
 /* Navbar */
 .navbar {
     padding: 1rem 0;

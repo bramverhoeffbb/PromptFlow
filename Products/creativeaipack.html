@@ -1,255 +1,119 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative AI Pack</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: #FFFFFF;
-            color: #0F172A;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        .header {
-            background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
-            color: #FFFFFF;
-            padding: 60px 40px;
-            border-radius: 20px;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-        
-        .logo {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .tagline {
-            font-size: 16px;
-            opacity: 0.9;
-            margin-bottom: 30px;
-        }
-        
-        .pack-title {
-            font-size: 42px;
-            font-weight: 700;
-            margin-bottom: 15px;
-        }
-        
-        .pack-price {
-            font-size: 24px;
-            font-weight: 600;
-            background: rgba(255,255,255,0.2);
-            display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
-        }
-        
-        .intro {
-            background: #F8FAFC;
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 40px;
-            border-left: 5px solid #3B82F6;
-        }
-        
-        .intro h2 {
-            color: #3B82F6;
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-        
-        .prompt {
-            background: #FFFFFF;
-            border: 2px solid #E2E8F0;
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .prompt:hover {
-            border-color: #3B82F6;
-            box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
-        }
-        
-        .prompt-number {
-            background: #3B82F6;
-            color: #FFFFFF;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            margin-right: 15px;
-            font-size: 16px;
-        }
-        
-        .prompt-content {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .prompt-text {
-            flex: 1;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #E2E8F0;
-        }
-        
-        .footer-logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: #3B82F6;
-            margin-bottom: 10px;
-        }
-        
-        .footer-text {
-            color: #64748B;
-            font-size: 14px;
-        }
-        
-        .download-btn {
-            background: #3B82F6;
-            color: #FFFFFF;
-            padding: 15px 40px;
-            border: none;
-            border-radius: 50px;
-            font-family: 'Poppins', sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-        }
-        
-        .download-btn:hover {
-            background: #2563EB;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-        
-        @media print {
-            .download-btn {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Creative AI Pack — PromptFlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Poppins',sans-serif;background:#fff;color:#0F172A;line-height:1.7;margin:0;padding:0}
+    .wrap{max-width:900px;margin:0 auto;padding:40px 20px}
+    .hero{background:linear-gradient(135deg,#3B82F6,#2563EB);color:#fff;padding:60px 32px;border-radius:16px;margin-bottom:32px;text-align:center}
+    .logo{font-weight:700;font-size:24px;margin-bottom:8px;letter-spacing:0.5px}
+    .title{font-weight:700;font-size:36px;margin:0 0 16px;line-height:1.2}
+    .subtitle{font-size:18px;opacity:0.9;max-width:700px;margin:0 auto 24px}
+    .price{display:inline-block;background:rgba(255,255,255,.15);padding:8px 24px;border-radius:999px;font-weight:600;font-size:18px}
+    .card{border:1px solid #E2E8F0;border-radius:12px;padding:28px;margin:24px 0;background:#fff;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.05)}
+    h3{font-size:22px;margin:0 0 16px;color:#1E293B}
+    ul{margin:0;padding:0;list-style:none}
+    li{margin:12px 0;position:relative;padding-left:24px}
+    li:before{content:"•";color:#3B82F6;position:absolute;left:0;font-weight:bold}
+    .footer{margin-top:60px;text-align:center;color:#64748B;font-size:14px;padding-top:24px;border-top:1px solid #E2E8F0}
+    .btn{display:inline-block;background:#3B82F6;color:#fff;border:0;border-radius:8px;padding:14px 32px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.2s ease;margin:8px 0}
+    .btn:hover{background:#2563EB;transform:translateY(-2px);box-shadow:0 4px 12px rgba(37, 99, 235, 0.2)}
+    .btn.secondary{background:#F1F5F9;color:#3B82F6;margin-right:12px}
+    .btn.secondary:hover{background:#E2E8F0;box-shadow:none}
+    .btn-group{margin:24px 0}
+    
+    /* Prompt specific styles */
+    .prompt {
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 16px 0;
+      transition: all 0.3s ease;
+    }
+    
+    .prompt:hover {
+      border-color: #3B82F6;
+      box-shadow: 0 5px 20px rgba(59, 130, 246, 0.1);
+    }
+    
+    .prompt-number {
+      background: #3B82F6;
+      color: #FFFFFF;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin-right: 16px;
+      font-size: 14px;
+    }
+    
+    .prompt-content {
+      display: flex;
+      align-items: center;
+    }
+    
+    .prompt-text {
+      flex: 1;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">PromptFlow</div>
-            <div class="tagline">Smarter prompts. Better flow.</div>
-            <div class="pack-title">Creative AI Pack</div>
-            <div class="pack-price">€15</div>
-        </div>
-        
-        <div class="intro">
-            <h2>Unleash your creativity with AI</h2>
-            <p>Perfect voor designers, schrijvers en kunstenaars. Deze 10 prompts helpen je om unieke visuele content, verhalen en creatieve concepten te genereren met Midjourney, DALL·E en meer.</p>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">1</span>
-                <div class="prompt-text">Generate 10 unique art-style prompts for Midjourney</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">2</span>
-                <div class="prompt-text">Write a prompt for a cinematic AI portrait in [style]</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">3</span>
-                <div class="prompt-text">Create a storytelling prompt for a fantasy short story</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">4</span>
-                <div class="prompt-text">Generate a creative writing exercise for daily practice</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">5</span>
-                <div class="prompt-text">Write a prompt for designing futuristic logo concepts</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">6</span>
-                <div class="prompt-text">Create 5 concept art ideas for a sci-fi environment</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">7</span>
-                <div class="prompt-text">Generate 3 photography-style prompts for product photography</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">8</span>
-                <div class="prompt-text">Schrijf een DALL·E prompt voor minimalistische posterkunst</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">9</span>
-                <div class="prompt-text">Create prompts to visualize startup branding ideas</div>
-            </div>
-        </div>
-        
-        <div class="prompt">
-            <div class="prompt-content">
-                <span class="prompt-number">10</span>
-                <div class="prompt-text">Generate creative taglines inspired by famous artists</div>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <div class="footer-logo">PromptFlow</div>
-            <div class="footer-text">Smarter prompts. Better flow.</div>
-            <div class="footer-text">© 2026 PromptFlow.ai - All rights reserved</div>
-            <button class="download-btn" onclick="window.print()">📥 Download / Print</button>
-        </div>
+  <div class="wrap">
+    <div class="hero">
+      <div class="logo">PromptFlow</div>
+      <h1 class="title">Creative AI Pack</h1>
+      <p class="subtitle">Unleash your creativity with AI-powered inspiration and tools</p>
+      <div class="price">€25</div>
     </div>
+
+    <div class="card">
+      <h3>What's Inside</h3>
+      <ul>
+        <li><strong>Creative Writing Prompts</strong> - Generate endless story ideas, characters, and plots</li>
+        <li><strong>Art & Design Inspiration</strong> - Get unique visual concepts and artistic directions</li>
+        <li><strong>Story Development Kit</strong> - Build compelling narratives and worlds</li>
+        <li><strong>Character Creator</strong> - Develop deep, memorable characters</li>
+        <li><strong>Content Brainstorming</strong> - Never run out of creative content ideas</li>
+        <li><strong>Creative Block Solutions</strong> - Overcome artist's block with AI assistance</li>
+        <li><strong>Style Guide Generator</strong> - Create consistent creative direction</li>
+        <li><strong>Idea Refinement Tools</strong> - Polish and develop your creative concepts</li>
+      </ul>
+      
+      <div class="btn-group">
+        <a href="#" class="btn secondary">View Sample</a>
+        <a href="#" class="btn">Get Instant Access - €25</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <h3>Why Choose This Pack?</h3>
+      <ul>
+        <li><strong>Endless Inspiration</strong> - Never face a blank page again</li>
+        <li><strong>Professional Quality</strong> - Created by creative professionals</li>
+        <li><strong>Versatile Tools</strong> - Perfect for writers, artists, and creators of all kinds</li>
+        <li><strong>Save Time</strong> - Generate ideas and content in minutes, not hours</li>
+      </ul>
+    </div>
+    
+    <div class="card" style="text-align: center; background: #F8FAFF;">
+      <h3 style="color: #2563EB;">Ready to Boost Your Creativity?</h3>
+      <p style="font-size: 18px; margin-bottom: 24px;">Get instant access to all creative tools and start bringing your ideas to life today.</p>
+      <a href="#" class="btn" style="font-size: 18px; padding: 16px 40px;">Get the Creative AI Pack - €25</a>
+      <p style="margin: 16px 0 0; color: #64748B; font-size: 14px;">One-time payment. Instant download. 30-day money-back guarantee.</p>
+    </div>
+    
+    <div class="footer">
+      <p>© 2026 PromptFlow. All rights reserved.</p>
+      <p><a href="#" style="color: #3B82F6; text-decoration: none;">Terms</a> | <a href="#" style="color: #3B82F6; text-decoration: none;">Privacy</a> | <a href="#" style="color: #3B82F6; text-decoration: none;">Contact</a></p>
+    </div>
+  </div>
 </body>
-</html>
